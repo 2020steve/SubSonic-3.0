@@ -51,6 +51,10 @@ namespace SubSonic.Repository
                 migrated = new List<Type>();
         }
 
+	public bool IsRunningMigrations
+	{
+	    get { return _options.Contains(SimpleRepositoryOptions.RunMigrations); } 
+	}
 
         #region IRepository Members
 
