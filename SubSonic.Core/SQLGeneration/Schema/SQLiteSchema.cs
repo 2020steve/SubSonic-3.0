@@ -43,8 +43,12 @@ namespace SubSonic.SqlGeneration.Schema
                 case DbType.String:
                 case DbType.StringFixedLength:
                     return "nvarchar";
+
+                //fix from: http://stackoverflow.com/questions/1137649/simplerepository-boolean-mapping-problem
+
                 case DbType.Boolean:
-                    return "tinyint";
+                    return "boolean"; // <-- This was set to "tinyint"
+
                 case DbType.SByte:
                 case DbType.Binary:
                 case DbType.Byte:
